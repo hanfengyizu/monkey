@@ -76,9 +76,9 @@ func patchValue(target, replacement reflect.Value) {
 		panic("replacement has to be a Func")
 	}
 
-	if target.Type() != replacement.Type() {
-		panic(fmt.Sprintf("target and replacement have to have the same type %s != %s", target.Type(), replacement.Type()))
-	}
+	//if target.Type() != replacement.Type() {
+		//panic(fmt.Sprintf("target and replacement have to have the same type %s != %s", target.Type(), replacement.Type()))
+	//}
 
 	if patch, ok := patches[target.Pointer()]; ok {
 		unpatch(target.Pointer(), patch)
